@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ageis Guard | AI-Powered Minecraft Anti-Cheat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#">
+        <div class="logo-icon">
+          <span class="material-symbols-outlined">shield</span>
+        </div>
+        <span class="logo-text">Ageis Guard</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#compare" class="nav-link">Why Ageis</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://discord.gg/TUrhfy27hy" class="btn-ghost">Discord</a>
+        <a href="#pricing" class="btn-primary">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#compare">Why Ageis</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#" class="btn-primary" style="margin-top:8px;">Get Started</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="badge reveal" data-delay="0">
+          <span class="badge-dot"></span>
+          <span>Next-Gen Anti-Cheat - Now Live</span>
+        </div>
+
+        <h1 class="hero-headline reveal" data-delay="100">
+          AI That Reads<br/>
+          <span class="gradient-text" id="typewriter-target">Player Intent</span><span id="typewriter-cursor" class="type-cursor">|</span><br/>
+          Not Just Packets.
+        </h1>
+
+        <p class="hero-sub reveal" data-delay="200">
+          Ageis Guard uses behavioral deep-learning to catch cheats that bypass traditional systems - analyzing movement, timing, and session patterns in real time.
+        </p>
+
+        <div class="hero-actions reveal" data-delay="300">
+          <a href="#pricing" class="btn-primary btn-lg magnetic">
+            Get Ageis Guard
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="https://discord.gg/TUrhfy27hy" class="btn-ghost btn-lg magnetic">
+            <span class="material-symbols-outlined">groups</span>
+            Join Discord
+          </a>
+        </div>
+
+        <div class="stats-strip reveal" data-delay="400">
+          <div class="stat">
+            <span class="stat-num" data-count="99.9" data-suffix="%">0%</span>
+            <span class="stat-label">Detection Accuracy</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="0.02" data-decimals="2" data-prefix="">0</span>
+            <span class="stat-label">TPS Impact</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">&#60;50ms</span>
+            <span class="stat-label">Alert Latency</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal" data-delay="200">
+        <div class="hero-card-glow"></div>
+        <div class="terminal" id="terminal-card">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="tdot red"></span>
+              <span class="tdot yellow"></span>
+              <span class="tdot green"></span>
+            </div>
+            <span class="terminal-title">Ageis-guard - live monitor</span>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+          </div>
+        </div>
+
+        <div class="discord-card" id="discord-card">
+          <div class="discord-avatar">AG</div>
+          <div class="discord-content">
+            <div class="discord-header">
+              <span class="discord-name">Ageis Guard</span>
+              <span class="discord-bot">BOT</span>
+              <span class="discord-time">just now</span>
+            </div>
+            <div class="discord-embed">
+              <div class="discord-embed-title">🚨 Suspicious Activity Detected</div>
+              <div class="discord-embed-body">
+                <span class="dc-label">Player:</span> Player_XYZ<br/>
+                <span class="dc-label">Flags:</span> Aimbot · Reach · Speed<br/>
+                <span class="dc-label">Confidence:</span> <span class="dc-danger">98.4%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator reveal" data-delay="600">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">Detection Suite</div>
+        <h2>Advanced Behavioral<br/>Intelligence</h2>
+        <p>Neural networks that evolve - identifying patterns, not just signatures.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal" data-delay="0">
+          <div class="feature-icon"><span class="material-symbols-outlined">neurology</span></div>
+          <h3>AI Anomaly Detection</h3>
+          <p>Real-time behavioral monitoring via deep learning models that adapt to emerging cheat techniques automatically.</p>
+          <div class="feature-line"></div>
+        </div>
+        <div class="feature-card reveal" data-delay="80">
+          <div class="feature-icon"><span class="material-symbols-outlined">analytics</span></div>
+          <h3>Session Analysis</h3>
+          <p>Cross-session player history and movement patterns analyzed to surface sophisticated alt accounts.</p>
+          <div class="feature-line"></div>
+        </div>
+        <div class="feature-card reveal" data-delay="160">
+          <div class="feature-icon"><span class="material-symbols-outlined">notifications_active</span></div>
+          <h3>Discord Alerts</h3>
+          <p>Instant rich-embed notifications to your staff channels for immediate, informed action.</p>
+          <div class="feature-line"></div>
+        </div>
+        <div class="feature-card reveal" data-delay="240">
+          <div class="feature-icon"><span class="material-symbols-outlined">speed</span></div>
+          <h3>Lightweight Plugin</h3>
+          <p>Engineered for minimum TPS footprint. All compute-heavy processing runs in our cloud infrastructure.</p>
+          <div class="feature-line"></div>
+        </div>
+        <div class="feature-card reveal" data-delay="320">
+          <div class="feature-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+          <h3>Plug &amp; Play Setup</h3>
+          <p>Zero configuration for immediate protection. Sensible AI profiles active the moment you install.</p>
+          <div class="feature-line"></div>
+        </div>
+        <div class="feature-card reveal" data-delay="400">
+          <div class="feature-icon"><span class="material-symbols-outlined">cloud_done</span></div>
+          <h3>Cloud Analysis</h3>
+          <p>Secure off-site processing keeps your server smooth while complex behavioral calculations run remotely.</p>
+          <div class="feature-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">The Pipeline</div>
+        <h2>Simple. Automated.<br/>Intelligent.</h2>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipeline-connector" id="pipeline-line"></div>
+
+        <div class="step reveal" data-delay="0">
+          <div class="step-node">
+            <span class="material-symbols-outlined">download</span>
+          </div>
+          <div class="step-num">01</div>
+          <h4>Install Plugin</h4>
+          <p>Drop the JAR into your plugins folder and restart</p>
+        </div>
+        <div class="step reveal" data-delay="100">
+          <div class="step-node">
+            <span class="material-symbols-outlined">stream</span>
+          </div>
+          <div class="step-num">02</div>
+          <h4>Events Streamed</h4>
+          <p>Player data securely piped to Ageis cloud</p>
+        </div>
+        <div class="step reveal" data-delay="200">
+          <div class="step-node">
+            <span class="material-symbols-outlined">psychology</span>
+          </div>
+          <div class="step-num">03</div>
+          <h4>AI Analyzes</h4>
+          <p>Behavioral models process every action for anomalies</p>
+        </div>
+        <div class="step reveal" data-delay="300">
+          <div class="step-node active">
+            <span class="material-symbols-outlined">gavel</span>
+          </div>
+          <div class="step-num active">04</div>
+          <h4>Alerts Triggered</h4>
+          <p>Staff instantly notified of high-confidence threats</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="container compare-grid">
+      <div class="compare-copy reveal">
+        <div class="eyebrow">Why Ageis</div>
+        <h2>Beyond Traditional Anti-Cheats</h2>
+        <p>Rule-based detection is static. Cheats are dynamic. Ageis bridges the gap with behavioral intelligence - reading the <em>intent</em> behind actions, not just the packets.</p>
+
+        <div class="compare-rows">
+          <div class="compare-row bad reveal" data-delay="100">
+            <div class="compare-icon red">
+              <span class="material-symbols-outlined">close</span>
+            </div>
+            <div>
+              <h5>Traditional Anti-Cheats</h5>
+              <p>Signature-based, easily bypassed by ghost clients, high TPS consumption, and require constant manual updates.</p>
+            </div>
+          </div>
+          <div class="compare-row good reveal" data-delay="200">
+            <div class="compare-icon blue">
+              <span class="material-symbols-outlined">check</span>
+            </div>
+            <div>
+              <h5>Ageis Guard AI</h5>
+              <p>Heuristic-based detection of subtle behavioral patterns, low server-side footprint, adaptive learning models.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-card reveal" data-delay="150">
+        <div class="stats-card-glow"></div>
+        <div class="confidence-row">
+          <span>Live Detection Confidence</span>
+          <span class="confidence-val">98.4%</span>
+        </div>
+        <div class="incident-box">
+          <div class="incident-header">
+            <span class="incident-id">INCIDENT #4922</span>
+            <span class="incident-time">2 MIN AGO</span>
+          </div>
+          <p>Anomalous movement. <span class="highlight">Player_XYZ</span> flagged for non-linear interpolation pattern.</p>
+        </div>
+        <div class="chart-area">
+          <div class="chart-label">Detections (7d)</div>
+          <div class="bar-chart" id="bar-chart">
+            <div class="bar" data-h="40"></div>
+            <div class="bar" data-h="65"></div>
+            <div class="bar" data-h="50"></div>
+            <div class="bar" data-h="75"></div>
+            <div class="bar" data-h="55"></div>
+            <div class="bar" data-h="85"></div>
+            <div class="bar active" data-h="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">Pricing</div>
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Scale your protection as your community grows.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="price-card reveal" data-delay="0">
+            <div class="price-tier">Starter</div>
+            <div class="price-amount"><span class="price-num">$30</span><span class="price-per">/mo</span></div>
+            <p class="price-desc">Perfect for small servers getting started with AI detection.</p>
+            <ul class="price-features">
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> 100 Peak Players</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> AI Behavior Detection</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Discord Alerts</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Session Activity Analysis</li>
+            <li class="no"><span class="material-symbols-outlined">cancel</span> Cross-Server Ban Signals</li>
+            </ul>
+            <button onclick="window.location.href='https://discord.gg/TUrhfy27hy'" class="btn-ghost price-btn">Request Access</button>
+        </div>
+
+        <!-- Pro -->
+        <div class="price-card featured reveal" data-delay="100">
+            <div class="price-recommended">Recommended</div>
+            <div class="price-tier">Pro</div>
+            <div class="price-amount"><span class="price-num">$60</span><span class="price-per">/mo</span></div>
+            <p class="price-desc">Advanced detection for competitive and growing servers.</p>
+            <ul class="price-features">
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> 400 Peak Players</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Advanced AI Behavior Analysis</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Custom Alerts &amp; Staff Logs</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Cross-Server Ban Signals</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Priority AI Processing</li>
+            </ul>
+            <button onclick="window.location.href='https://discord.gg/TUrhfy27hy'" class="btn-primary price-btn magnetic">Request Access</button>
+        </div>
+
+        <!-- Network -->
+        <div class="price-card reveal" data-delay="200">
+            <div class="price-tier">Network</div>
+            <div class="price-amount"><span class="price-num">$120</span><span class="price-per">/mo</span></div>
+            <p class="price-desc">Full-scale protection for large Minecraft networks.</p>
+            <ul class="price-features">
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Unlimited Players</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Multi-Server Support</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Advanced Behavior Intelligence</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> API Access</li>
+            <li class="yes"><span class="material-symbols-outlined">check_circle</span> Priority Support</li>
+            </ul>
+            <button onclick="window.location.href='https://discord.gg/TUrhfy27hy'" class="btn-ghost price-btn">Request Access</button>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="cta-orb"></div>
+    <div class="container cta-inner reveal">
+      <div class="eyebrow">Get Started</div>
+      <h2>Upgrade Your Server<br/>Security Today</h2>
+      <p>Join hundreds of server owners who trust Ageis Guard to maintain a fair, competitive environment.</p>
+      <div class="cta-actions">
+        <a href="#pricing" class="btn-primary btn-lg magnetic">
+          Get Ageis Guard Now
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://discord.gg/TUrhfy27hy" class="btn-ghost btn-lg">Join Our Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#">
+        <div class="logo-icon sm"><span class="material-symbols-outlined">shield</span></div>
+        <span class="logo-text">Ageis Guard</span>
+      </a>
+      <div class="footer-links">
+        <a href="https://discord.gg/TUrhfy27hy">Discord</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-copy">© 2024 Ageis Guard. Not affiliated with Mojang or Microsoft.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+<!-- WELP YOU REACHED THE END, YES THIS LANDING PAGE WAS MADE USING AI... -->
